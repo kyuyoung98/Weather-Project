@@ -19,3 +19,6 @@ logging:
     org.hibernate: info
     org.hibernate.SQL: debug
     org.hibernate.type: trace
+
+jwt:
+  secret: thisismyweatherdataprojectthisismyweatherdataprojectthisismyweatherdataproject
