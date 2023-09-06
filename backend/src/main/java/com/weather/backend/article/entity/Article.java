@@ -1,4 +1,4 @@
-package com.weather.backend.Article.entity;
+package com.weather.backend.article.entity;
 
 
 import jakarta.persistence.Entity;
