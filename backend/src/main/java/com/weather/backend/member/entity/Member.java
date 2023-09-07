@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@Builder
 @NoArgsConstructor
 public class Member {
 
@@ -33,18 +32,20 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Authority authority;
 
-    public void setNickname(String nickname) {
+    public void setName(String name) {
         this.name = name;
     }
 
     public void setPassword(String password) { this.password = password; }
 
     @Builder
-    public Member(Long id, String email, String password, String name, Authority authority) {
+    public Member(Long id, String email, String password, String name, String phone, String address, Authority authority) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
+        this.phone = phone;
+        this.address = address;
         this.authority = authority;
     }
 }

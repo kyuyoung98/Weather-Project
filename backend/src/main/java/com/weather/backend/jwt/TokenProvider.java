@@ -34,7 +34,6 @@ public class TokenProvider {
         this.key = Keys.hmacShaKeyFor(keyBytes);
     }
 
-
     // 토큰 생성 메소드
     public TokenDto generateTokenDto(Authentication authentication) {
         // Authentication 인터페이스를 확장한 매개변수를 받아서 그 값을 string으로 변환
