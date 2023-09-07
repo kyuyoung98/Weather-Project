@@ -17,12 +17,16 @@ public class MemberRequestDto {
     private String email;
     private String password;
     private String name;
+    private String phone;
+    private String address;
 
     public Member toMember(PasswordEncoder passwordEncoder) {
         return Member.builder()
                 .email(email)
                 .password(passwordEncoder.encode(password))
                 .name(name)
+                .phone(phone)
+                .address(address)
                 .authority(Authority.ROLE_USER)
                 .build();
     }
