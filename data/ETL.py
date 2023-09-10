@@ -67,7 +67,7 @@ class WeatherDataCollector:
         
         current_date = datetime.now().strftime("%Y%m%d")
 
-        file_name = f"./files/{current_date}_Weather.csv"
+        file_name = f"./files/korea_weather/{current_date}_Weather.csv"
         df.to_csv(file_name, index=False)
 
     def run_pipeline(self):
