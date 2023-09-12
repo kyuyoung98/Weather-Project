@@ -2,6 +2,7 @@ package com.weather.backend.board.dto;
 import com.weather.backend.board.entity.Board;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.format.DateTimeFormatter;
 
