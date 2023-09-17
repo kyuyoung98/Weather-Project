@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import './App.css'; // CSS 파일을 추가
 
 import CreateAccountForm from './components/Auth/CreateAccountForm';
 import Layout from './components/Layout/Layout';
