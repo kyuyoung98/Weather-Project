@@ -8,12 +8,12 @@ import AuthContext from '../../store/auth-context';
 const MainNavigation = () =>{
 
   const authCtx = useContext(AuthContext);
-  const [nickname, setNickname] = useState('');
+  const [name, setName] = useState('');
   let isLogin = authCtx.isLoggedIn;
   let isGet = authCtx.isGetSuccess;
 
   const callback = (str:string) => {
-    setNickname(str);
+    setName(str);
   }
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const MainNavigation = () =>{
         <ul className={classes.navList}>
           <li className={classes.navItem}>{!isLogin && <Link to='/login'>Login</Link>}</li>
           <li className={classes.navItem}>{!isLogin && <Link to='/signup'>Sign-Up</Link>}</li>
-          <li className={classes.navItem}>{isLogin && <Link to='/profile'>{nickname}</Link>}</li>
+          <li className={classes.navItem}>{isLogin && <Link to='/profile'>{name}님 안녕하세요!</Link>}</li>
           <li className={classes.navItem}>{isLogin && <button onClick={toggleLogoutHandler}>Logout</button>}</li>
         </ul>
       </nav>
