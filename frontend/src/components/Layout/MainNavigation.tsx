@@ -39,10 +39,13 @@ const MainNavigation = () =>{
   return(
     <header className={classes.header}>
       <nav className={classes.nav}>
-        <Link to='/' className={classes.logo}>Home</Link>
+        <p className={classes.logo}>
+          {!isLogin && <Link to='/'>Home</Link>}
+          {isLogin && <Link to='/main/'>Main</Link>}
+        </p>
         <ul className={classes.navList}>
           <li className={classes.navItem}>{!isLogin && <Link to='/login'>Login</Link>}</li>
-          <li className={classes.navItem}>{!isLogin && <Link to='signup'>Sign-Up</Link>}</li>
+          <li className={classes.navItem}>{!isLogin && <Link to='/signup'>Sign-Up</Link>}</li>
           <li className={classes.navItem}>{isLogin && <Link to='/profile'>{nickname}</Link>}</li>
           <li className={classes.navItem}>{isLogin && <button onClick={toggleLogoutHandler}>Logout</button>}</li>
         </ul>

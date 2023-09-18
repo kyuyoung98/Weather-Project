@@ -23,7 +23,7 @@ const AuthForm = () => {
     setIsLoading(false);
 
     if (authCtx.isSuccess) {
-      navigate("/", { replace: true });
+      navigate("/main", { replace: true });
     }
     
 }
@@ -43,7 +43,6 @@ const AuthForm = () => {
           <div className={classes.actions}>
             <button type='submit'>Login</button>
             {isLoading && <p>Loading</p>}
-            <p>Create Account</p>
           </div>
         </form>
       </section>
