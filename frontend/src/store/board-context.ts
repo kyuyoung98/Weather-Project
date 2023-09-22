@@ -4,7 +4,7 @@ import * as boardAction from './board-action';
 type Props = { children?: React.ReactNode }
 type BoardInfo = {
   boardId: number,
-  memberNickname: string,
+  memberName: string,
   boardTitle: string,
   boardBody: string,
   cratedAt: string,
@@ -143,9 +143,10 @@ export const BoardContextProvider:React.FC<Props> = (props) => {
   }
 
   return (
-  <BoardContext.Provider value={contextValue}>
-    {props.children}
-  </BoardContext.Provider>)
+    <BoardContext.Provider value={contextValue}>
+      {props.children}
+    </BoardContext.Provider>
+  );
 }
 
 export default BoardContext;
