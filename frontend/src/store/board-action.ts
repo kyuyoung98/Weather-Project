@@ -1,4 +1,4 @@
-import { GET, POST, PUT, DELETE }  from "./fetch-action";
+import { GET, POST, PUT, DELETE }  from "./fetch-auth-action";
 
 interface PostBoard {
   id? : string,
