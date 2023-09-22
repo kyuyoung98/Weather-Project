@@ -10,10 +10,10 @@ import CreateAccountPage from './pages/CreateAccountPage';
 import ProfilePage from './pages/ProfilePage';
 import AuthContext from './store/auth-context';
 import MainPage from './pages/MainPage';
-import PostListPage from './pages/PostListPage';
-import CreatePostPage from './pages/CreatePostPage';
-import UpdatePostPage from './pages/UpdatePostPage';
-import PostOnePage from './pages/PostOnePage';
+import BoardListPage from './pages/BoardListPage';
+import CreateBoardPage from './pages/CreateBoardPage';
+import UpdateBoardPage from './pages/UpdateBoardPage';
+import BoardOnePage from './pages/BoardOnePage';
 
 function App() {
 
@@ -24,7 +24,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         
-
+        <Route path="/page/:pageId" element={<BoardListPage />} />
+        <Route path="/create" element={authCtx.isLoggedIn ? <CreateBoardPage /> : <Navigate to='/' />} />
+        <Route path="/update/:postId" element={authCtx.isLoggedIn ? <UpdateBoardPage /> : <Navigate to='/' />} />
+        <Route path="/article/:postId" element={<BoardOnePage />} />
 
         <Route path="/main/" element={!authCtx.isLoggedIn ? <Navigate to='/' /> : <MainPage />} />
         <Route path="/signup/" element={authCtx.isLoggedIn ? <Navigate to='/' /> : <CreateAccountPage />} />
