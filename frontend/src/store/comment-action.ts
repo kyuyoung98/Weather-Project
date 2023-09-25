@@ -1,4 +1,4 @@
-import { GET, POST, DELETE }  from "./fetch-action";
+import { GET, POST, DELETE }  from "./fetch-auth-action";
 
 type Comment = {
   articleId: string,
