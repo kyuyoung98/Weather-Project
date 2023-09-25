@@ -5,14 +5,14 @@ import * as commentAction from './comment-action';
 type Props = { children?: React.ReactNode }
 type CommentInfo = {
   commentId: number,
-  memberNickname: string,
+  memberName: string,
   commentBody: string,
   createdAt: Date,
   written: boolean
 }
 
 type PostComment = {
-  articleId: string,
+  boardId: string,
   body: string
 }
 
@@ -54,7 +54,7 @@ export const CommentContextProvider:React.FC<Props> = (props) => {
     const postData = await commentAction.makeComment(comment, token);
     const msg = await postData?.data;
 
-    const getData = await commentAction.getComments(comment.articleId, token);
+    const getData = await commentAction.getComments(comment.boardId, token);
     const comments:CommentInfo[] = getData?.data;
     setCommentList(comments);
     setIsSuccess(true);

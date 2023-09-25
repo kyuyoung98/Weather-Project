@@ -68,7 +68,7 @@ export const getUserActionHandler = (token:string) => {
   return response;
 }
 
-export const changeNicknameActionHandler = ( name:string, token: string) => {
+export const changeNameActionHandler = ( name:string, token: string) => {
   const URL = '/member/name';
   const changeNameObj = { name };
   const response = POST(URL, changeNameObj, createTokenHeader(token));
