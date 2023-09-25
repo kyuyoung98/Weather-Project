@@ -21,7 +21,7 @@ const AuthContext = React.createContext({
   login: (email:string, password: string) => {},
   logout: () => {},
   getUser: () => {},
-  changeNickname: (name:string) => {},
+  changeName: (name:string) => {},
   changePassword: (exPassword: string, newPassword: string) => {}
 });
 
@@ -99,10 +99,10 @@ export const AuthContextProvider:React.FC<Props> = (props) => {
     
   };
 
-  const changeNicknameHandler = (name:string) => {
+  const changeNameHandler = (name:string) => {
     setIsSuccess(false);
 
-    const data = authAction.changeNicknameActionHandler(name, token);
+    const data = authAction.changeNameActionHandler(name, token);
     data.then((result) => {
       if (result !== null) {
         const userData:UserInfo = result.data;
@@ -141,7 +141,7 @@ export const AuthContextProvider:React.FC<Props> = (props) => {
     login: loginHandler,
     logout: logoutHandler,
     getUser: getUserHandler,
-    changeNickname: changeNicknameHandler,
+    changeName: changeNameHandler,
     changePassword: changePaswordHandler
   }
   
